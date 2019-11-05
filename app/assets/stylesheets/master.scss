@@ -1,6 +1,5 @@
 @import "bootstrap";
 
-
 .navbar {
   background: image_url('beanstalk-dark.png');
   font-family: "Helvetica Neue", Helvetica;
@@ -15,7 +14,8 @@
 }
 
 body {
-  background: image_url('beanstalk.png')
+  background: image_url('beanstalk.png');
+  font-family: "Trebuchet MS", sans-serif;
 }
 
 .hero {
@@ -51,4 +51,10 @@ h1, h2, h3, h4, h5, h6, .navbar {
 
 .btn {
   border-radius: 0;  
+}
+
+.feature {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
