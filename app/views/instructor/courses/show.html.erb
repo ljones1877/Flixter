@@ -38,10 +38,12 @@
   <h1 class="text-center"><%= current_course.title %></h1>
   <%= image_tag current_course.image.to_s, class: 'img-fluid' %>
   
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary btn-lg float-right new-lesson-button" data-toggle="modal" data-target="#newLessonModal" data-lesson-url="<%= instructor_section_lessons_path(section) %>">
-  New Lesson...
-  </button>
+   <div class="text-center">
+    <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newSectionModal">
+        Add a new section...
+      </button>
+    </div>
 
 
   <ul class="sections">
@@ -53,9 +55,9 @@
         </div>
 
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newLessonModal">
-          New Lesson...
-        </button>
+      <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#newLessonModal">
+        New Lesson...
+      </button>
 
         <br class="clr" />
         <br class="clr" />
