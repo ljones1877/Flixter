@@ -5,17 +5,14 @@ class Instructor::LessonsController < ApplicationController
   def show
   end
   
-  def new
-    @lesson = Lesson.new
-  end
-
-  def create
-    @lesson = current_section.lessons.create(lesson_params)
-    redirect_to instructor_course_path(current_section.course)
-  end
-
   private
 
+  def require_user_be_enrolled
+    if !current_user.enrolled_in?(current_lesson.section.course)
+        redirect_to course_path(current_lesson.section.course), alert: 'You must be enrolled in this course before you can view its lessons.'
+    end
+  end
+  
   def require_authorized_for_current_section
     if current_section.course.user != current_user
       render plain: 'Unauthorized', status: :unauthorized

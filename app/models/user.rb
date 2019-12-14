@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :courses
   has_many :images
   has_many :lessons
+  haz_many :sections
   has_many :enrollments
   has_many :enrolled_courses, through: :enrollments, source: :course
 
