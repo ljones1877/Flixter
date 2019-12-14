@@ -21,7 +21,7 @@
 
       <br />
       <br />
-
+      
       <% if current_user %>
         <% if current_user.enrolled_in?(@course) %>
           <h3 class="badge badge-info">You Are Enrolled!</h3>
@@ -43,11 +43,14 @@
         <h3 class="badge badge-info">Sign In to Enroll!</h3>
       <% end %>
     </div>
-
-    <div class="col-sm-8 col-12">
-      <%= @course.description %>
-    </div>
   </div>
+    <br />
+    <% if @course.image.url %>
+      <div class="col-sm-8 col-12">
+        <%= image_tag @course.image.url, class: 'img-fluid' %>
+      </div>
+    <% end %>
+
 
   <div class="col-12">
      <% @course.sections.rank(:row_order).each do |section| %>

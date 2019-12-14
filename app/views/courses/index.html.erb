@@ -3,28 +3,27 @@
 <div class="booyah-box col-10 offset-1">
   <h1 class="text-center">Learn something today</h1>
   <br />
-  
-  <% @courses.each do |course| %>
-    <div class="box col-10 offset-1">
+
+  <%if @courses != nil %>
+    <% @courses.each do |course| %>
       <h2 class="text-center">
         <%= link_to course.title, course_path(course) %>
       </h2>
-      <hr />
-     <% if course.image.present? %>
-        <%= image_tag course.image.to_s, class: 'img-fluid' %>
-        <br class="clr" />
-      <% end %>
-      <br />
       <div class="row">
+        <br />
         <div class="col-sm-8 col-12">
           <%= course.description %>
         </div>
+        <% if course.image.url %>
+          <div class="col-sm-8 col-12">
+            <%= image_tag course.image.url, class: 'img-fluid' %>
+          </div>
+        <% end %>
         <div class="col-sm-4 col-12 text-center">
-          <%= link_to 'view', course_path(course), class: 'btn btn-success' %>
-        </div>
+          <%= link_to 'More Details...', course_path(course), class: 'btn btn-primary btn-large'%>
+        </div> 
       </div>
       <br class="clr" />
-    </div>
-    <br />
+    <% end %>
   <% end %>
 </div>
