@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :courses
+  has_many :photos
   has_many :images
   has_many :lessons
   has_many :sections

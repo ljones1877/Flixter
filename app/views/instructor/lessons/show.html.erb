@@ -5,6 +5,8 @@
   <p class="float-left">
     <%= current_lesson.subtitle %>
   </p>
+    <%= link_to 'Video', current_lesson.video.to_s %>
+  </p>
 
   <% if current_lesson.next_lesson.present? %>
     <%= link_to lesson_path(current_lesson.next_lesson), class: 'btn btn-default float-right' do %>

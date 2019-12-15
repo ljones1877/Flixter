@@ -1,4 +1,4 @@
-class Instructor::LessonsController < ApplicationController
+class LessonsController < ApplicationController
   before_action :authenticate_user!
   before_action :require_authorized_for_current_section, only: [:create]
   before_action :require_authorized_for_current_lesson, only: [:update]
@@ -11,6 +11,10 @@ class Instructor::LessonsController < ApplicationController
   def update
     current_lesson.update_attributes(lesson_params)
     render plain: 'updated!'
+  end
+
+  def new
+    @lesson = Lesson.new
   end
 
   private
