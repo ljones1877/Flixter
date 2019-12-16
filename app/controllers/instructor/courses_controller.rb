@@ -7,7 +7,7 @@ class Instructor::CoursesController < ApplicationController
   end
 
   def create
-    @course = current_user.course.create(course_params)
+    @courses = current_user.courses.create(course_params)
     if @course.valid?     
       redirect_to instructor_course_path(@course)
     else
