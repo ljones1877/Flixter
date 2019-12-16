@@ -8,8 +8,8 @@ class Instructor::CoursesController < ApplicationController
 
   def create
     @courses = current_user.courses.create(course_params)
-    if @course.valid?     
-      redirect_to instructor_course_path(@course)
+    if @courses.valid?     
+      redirect_to instructor_course_path(@courses)
     else
       render :new, status: :unprocessable_entity
     end
